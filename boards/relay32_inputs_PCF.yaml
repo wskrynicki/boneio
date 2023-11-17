@@ -15,9 +15,24 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
+    on_multi_click:
+    - timing :
+        - ON for at most 1s
+        - OFF for at most 1s
+        - ON for at most 1s
+        - OFF for at least 0.2s
       then:
-        - switch.toggle: relay_1
+        - switch.toggle: relay_23
+    - timing:
+        - ON for 1s to 2s
+        - OFF for at least 0.5s
+      then:
+        - switch.toggle: relay_24
+    - timing:
+        - ON for at most 1s
+        - OFF for at least 0.5s
+      then:
+        - switch.toggle: relay_25
 
   - platform: gpio
     name: "${node_name} IN_02"
@@ -40,7 +55,7 @@ binary_sensor:
       number: 2
       mode:
         input: true
-      inverted: true
+      inverted: false
     on_press:
       then:
         - switch.toggle: relay_3
@@ -53,7 +68,7 @@ binary_sensor:
       number: 3
       mode:
         input: true
-      inverted: true
+      inverted: false
     on_press:
       then:
         - switch.toggle: relay_4
@@ -79,7 +94,7 @@ binary_sensor:
       number: 5
       mode:
         input: true
-      inverted: true
+      inverted: false
     on_press:
       then:
         - switch.toggle: relay_6
@@ -300,7 +315,7 @@ binary_sensor:
       number: 1
       mode:
         input: true
-      inverted: true
+      inverted: false
     on_press:
       then:
         - switch.toggle: relay_23
@@ -326,7 +341,7 @@ binary_sensor:
       number: 8
       mode:
         input: true
-      inverted: true
+      inverted: false
     on_press:
       then:
         - switch.toggle: relay_25
@@ -428,6 +443,7 @@ binary_sensor:
       number: GPIO33
       mode:
         input: true
+        pullup: true
       inverted: true
       
   - platform: gpio
@@ -436,7 +452,8 @@ binary_sensor:
       number: GPIO17
       mode:
         input: true
-      inverted: true
+        pullup: true
+      inverted: false
       
   - platform: gpio
     name: "${node_name} IN_35"
@@ -446,4 +463,6 @@ binary_sensor:
         input: true
         pullup: true
       inverted: false
-
+    on_press:
+      then:
+        - switch.toggle: relay_23

@@ -27,7 +27,8 @@ sensor:
     max_current: 3.2A
     update_interval: 30s
 
-mcp23017:
+#mcp23017:
+pcf8574:
   - id: 'mcp_inputs_1to16'
     address: 0x26
   - id: 'mcp_inputs_17to32'

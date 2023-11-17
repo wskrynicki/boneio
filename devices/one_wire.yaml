@@ -1,5 +1,17 @@
 dallas:
 - pin: GPIO32
+  update_interval: 10s
+  
+sensor:
+- platform: dallas
+  address:  0xc33ce1e381796328
+  name: "Temp kuchnia"
+  
+- platform: dallas
+  address: 0x803ce1e381134028
+  name: "Temp garaż"
+#logger:
+#  level: VERBOSE
 
 # sensor:
 #   - platform: dallas

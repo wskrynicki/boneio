@@ -271,17 +271,17 @@ binary_sensor:
         - ON for at most 1s
         - OFF for at least 0.2s
       then:
-        - switch.toggle: relay_11
+        - switch.toggle: relay_21 #PD
     - timing:
         - ON for 1s to 2s
         - OFF for at least 0.5s
       then:
-        - switch.toggle: relay_32
+        - switch.toggle: relay_32 #HL
     - timing:
         - ON for at most 1s
         - OFF for at least 0.5s
       then:
-        - switch.toggle: relay_19
+        - switch.toggle: relay_19 #GA
 #    on_press:
  #     then:
   #      - switch.toggle: relay_19

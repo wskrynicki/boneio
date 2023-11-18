@@ -236,7 +236,7 @@ switch:
     pin:
       pcf8574: pcf_2
       # Use pin number 3
-      number: 6
+      number: 7
       mode:
         output: true
       inverted: true
@@ -248,7 +248,7 @@ switch:
     pin:
       pcf8574: pcf_2
       # Use pin number 2
-      number: 7
+      number: 6
       mode:
         output: true
       inverted: true

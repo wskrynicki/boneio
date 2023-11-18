@@ -69,3 +69,83 @@ cover:
   stop_action:
     - switch.turn_off: cover_open_04
     - switch.turn_off: cover_close_04
+
+- platform: time_based
+  name: "${node_name} Cover 05"
+  device_class: shutter
+  id: cover_05
+  open_action:
+    - switch.turn_off: cover_close_05
+    - switch.turn_on: cover_open_05
+  open_duration: 20s
+  close_action:
+    - switch.turn_off: cover_open_05
+    - switch.turn_on: cover_close_05
+  close_duration: 16s
+  stop_action:
+    - switch.turn_off: cover_open_05
+    - switch.turn_off: cover_close_05
+
+- platform: time_based
+  name: "${node_name} Cover 06"
+  device_class: shutter
+  id: cover_06
+  open_action:
+    - switch.turn_off: cover_close_06
+    - switch.turn_on: cover_open_06
+  open_duration: 20s
+  close_action:
+    - switch.turn_off: cover_open_06
+    - switch.turn_on: cover_close_06
+  close_duration: 16s
+  stop_action:
+    - switch.turn_off: cover_open_06
+    - switch.turn_off: cover_close_06
+
+- platform: time_based
+  name: "${node_name} Cover 07"
+  device_class: shutter
+  id: cover_07
+  open_action:
+    - switch.turn_off: cover_close_07
+    - switch.turn_on: cover_open_07
+  open_duration: 20s
+  close_action:
+    - switch.turn_off: cover_open_07
+    - switch.turn_on: cover_close_07
+  close_duration: 16s
+  stop_action:
+    - switch.turn_off: cover_open_07
+    - switch.turn_off: cover_close_07
+
+- platform: time_based
+  name: "${node_name} Cover 08"
+  device_class: shutter
+  id: cover_08
+  open_action:
+    - switch.turn_off: cover_close_08
+    - switch.turn_on: cover_open_08
+  open_duration: 20s
+  close_action:
+    - switch.turn_off: cover_open_08
+    - switch.turn_on: cover_close_08
+  close_duration: 16s
+  stop_action:
+    - switch.turn_off: cover_open_08
+    - switch.turn_off: cover_close_08
+
+- platform: time_based
+  name: "${node_name} Cover 09"
+  device_class: shutter
+  id: cover_09
+  open_action:
+    - switch.turn_off: cover_close_09
+    - switch.turn_on: cover_open_09
+  open_duration: 20s
+  close_action:
+    - switch.turn_off: cover_open_09
+    - switch.turn_on: cover_close_09
+  close_duration: 16s
+  stop_action:
+    - switch.turn_off: cover_open_09
+    - switch.turn_off: cover_close_09

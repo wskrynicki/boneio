@@ -210,6 +210,28 @@ switch:
 #PCF_2
 
   - platform: gpio
+    id: relay_29
+    name: "Relay_29"
+    pin:
+      pcf8574: pcf_2
+      # Use pin number 11
+      number: 4
+      mode:
+        output: true
+      inverted: true
+
+  - platform: gpio
+    id: relay_30
+    name: "Relay_30"
+    pin:
+      pcf8574: pcf_2
+      # Use pin number 10
+      number: 5
+      mode:
+        output: true
+      inverted: true
+
+  - platform: gpio
     id: cover_open_09
     pin:
       pcf8574: pcf_2

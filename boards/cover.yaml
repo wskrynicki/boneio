@@ -6,11 +6,11 @@ cover:
   open_action:
     - switch.turn_off: cover_close_01
     - switch.turn_on: cover_open_01
-  open_duration: 10s
+  open_duration: 20s
   close_action:
     - switch.turn_off: cover_open_01
     - switch.turn_on: cover_close_01
-  close_duration: 13s
+  close_duration: 16s
   stop_action:
     - switch.turn_off: cover_open_01
     - switch.turn_off: cover_close_01

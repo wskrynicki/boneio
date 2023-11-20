@@ -488,9 +488,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-      on_press:
-        then:
-          cover.toggle: cover_09
+    on_press:
+      then:
+        cover.toggle: cover_09
    #   on_release:
    #     then:
    #       cover.stop: cover_16

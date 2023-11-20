@@ -8,12 +8,12 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        - cover.open: cover_01
-    on_release:
-      then:
-        cover.stop: cover_01
+#    on_press:
+ #     then:
+  #      - cover.open: cover_01
+   # on_release:
+    #  then:
+     #   cover.stop: cover_01
 
   - platform: gpio
     name: "${node_name} IN_02"
@@ -24,12 +24,12 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        cover.open: cover_01
-    on_release:
-      then:
-        cover.stop: cover_01
+    #on_press:
+     # then:
+      #  cover.open: cover_01
+    #on_release:
+     # then:
+      #  cover.stop: cover_01
 
   - platform: gpio
     name: "${node_name} IN_03"
@@ -40,12 +40,12 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        cover.open: cover_02
-    on_release:
-      then:
-        cover.stop: cover_02
+#    on_press:
+ #     then:
+  #      cover.open: cover_02
+   # on_release:
+    #  then:
+     #   cover.stop: cover_02
 
   - platform: gpio
     name: "${node_name} IN_04"
@@ -56,12 +56,12 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        cover.open: cover_02
-    on_release:
-      then:
-        cover.stop: cover_02
+#    on_press:
+ #     then:
+  #      cover.open: cover_02
+   # on_release:
+    #  then:
+     #   cover.stop: cover_02
 
   # - platform: gpio
   #   name: "${node_name} IN_05"

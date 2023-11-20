@@ -64,7 +64,7 @@ switch:
     pin:
       pcf8574: pcf_1
       # Use pin number 3
-      number: 11
+      number: 10
       mode:
         output: true
       inverted: true
@@ -76,7 +76,7 @@ switch:
     pin:
       pcf8574: pcf_1
       # Use pin number 2
-      number: 10
+      number: 11
       mode:
         output: true
       inverted: true
@@ -88,7 +88,7 @@ switch:
     pin:
       pcf8574: pcf_1
       # Use pin number 3
-      number: 9
+      number: 8
       mode:
         output: true
       inverted: true
@@ -100,7 +100,7 @@ switch:
     pin:
       pcf8574: pcf_1
       # Use pin number 2
-      number: 8
+      number: 9
       mode:
         output: true
       inverted: true
@@ -114,7 +114,7 @@ switch:
     pin:
       pcf8574: pcf_2
       # Use pin number 3
-      number: 15
+      number: 14
       mode:
         output: true
       inverted: true
@@ -126,7 +126,7 @@ switch:
     pin:
       pcf8574: pcf_2
       # Use pin number 2
-      number: 14
+      number: 15
       mode:
         output: true
       inverted: true
@@ -162,7 +162,7 @@ switch:
     pin:
       pcf8574: pcf_2
       # Use pin number 3
-      number: 11
+      number: 10
       mode:
         output: true
       inverted: true
@@ -174,7 +174,7 @@ switch:
     pin:
       pcf8574: pcf_2
       # Use pin number 2
-      number: 10
+      number: 11
       mode:
         output: true
       inverted: true
@@ -186,7 +186,7 @@ switch:
     pin:
       pcf8574: pcf_2
       # Use pin number 3
-      number: 9
+      number: 8
       mode:
         output: true
       inverted: true
@@ -198,7 +198,7 @@ switch:
     pin:
       pcf8574: pcf_2
       # Use pin number 2
-      number: 8
+      number: 9
       mode:
         output: true
       inverted: true

@@ -15,24 +15,24 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_multi_click:
-    - timing :
-        - ON for at most 1s
-        - OFF for at most 1s
-        - ON for at most 1s
-        - OFF for at least 0.2s
-      then:
-        - switch.toggle: relay_23
-    - timing:
-        - ON for 1s to 2s
-        - OFF for at least 0.5s
-      then:
-        - switch.toggle: relay_24
-    - timing:
-        - ON for at most 1s
-        - OFF for at least 0.5s
-      then:
-        - switch.toggle: relay_25
+#    on_multi_click:
+#    - timing :
+#        - ON for at most 1s
+#        - OFF for at most 1s
+#        - ON for at most 1s
+#        - OFF for at least 0.2s
+#      then:
+#        - switch.toggle: relay_23
+#    - timing:
+#        - ON for 1s to 2s
+#        - OFF for at least 0.5s
+#      then:
+#        - switch.toggle: relay_24
+#    - timing:
+#        - ON for at most 1s
+#        - OFF for at least 0.5s
+#      then:
+#        - switch.toggle: relay_25
 
   - platform: gpio
     name: "${node_name} IN_02"
@@ -43,9 +43,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        - switch.toggle: relay_2
+#    on_press:
+#      then:
+#        - switch.toggle: relay_2
 
   - platform: gpio
     name: "${node_name} IN_03"
@@ -55,10 +55,10 @@ binary_sensor:
       number: 2
       mode:
         input: true
-      inverted: false
-    on_press:
-      then:
-        - switch.toggle: relay_3
+      inverted: true
+#    on_press:
+#      then:
+#        - switch.toggle: relay_3
 
   - platform: gpio
     name: "${node_name} IN_04"
@@ -68,10 +68,25 @@ binary_sensor:
       number: 3
       mode:
         input: true
-      inverted: false
-    on_press:
+      inverted: true
+    on_multi_click:
+    - timing :
+        - ON for at most 1s
+        - OFF for at most 1s
+        - ON for at most 1s
+        - OFF for at least 0.2s
       then:
-        - switch.toggle: relay_4
+        - switch.toggle: relay_8 #TA
+    - timing:
+        - ON for 1s to 2s
+        - OFF for at least 0.5s
+      then:
+        - switch.toggle: relay_9 #TA
+    - timing:
+        - ON for at most 1s
+        - OFF for at least 0.5s
+      then:
+        - switch.toggle: relay_14 #SA
 
   - platform: gpio
     name: "${node_name} IN_05"
@@ -82,9 +97,24 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
+    on_multi_click:
+    - timing :
+        - ON for at most 1s
+        - OFF for at most 1s
+        - ON for at most 1s
+        - OFF for at least 0.2s
       then:
-        - switch.toggle: relay_5
+        - switch.toggle: relay_7 #TA
+    - timing:
+        - ON for 1s to 2s
+        - OFF for at least 0.5s
+      then:
+        - switch.toggle: relay_9 #TA
+    - timing:
+        - ON for at most 1s
+        - OFF for at least 0.5s
+      then:
+        - switch.toggle: relay_15 #SA
 
   - platform: gpio
     name: "${node_name} IN_06"
@@ -94,10 +124,26 @@ binary_sensor:
       number: 5
       mode:
         input: true
-      inverted: false
-    on_press:
+      inverted: true
+    on_multi_click:
+    - timing :
+        - ON for at most 1s
+        - OFF for at most 1s
+        - ON for at most 1s
+        - OFF for at least 0.2s
       then:
-        - switch.toggle: relay_6
+        - switch.toggle: relay_17 #TA
+    - timing:
+        - ON for 1s to 2s
+        - OFF for at least 0.5s
+      then:
+        - switch.toggle: relay_9 #TA
+    - timing:
+        - ON for at most 1s
+        - OFF for at least 0.5s
+      then:
+        - switch.toggle: relay_16 #SA
+
 
   - platform: gpio
     name: "${node_name} IN_07"
@@ -110,7 +156,7 @@ binary_sensor:
       inverted: true
     on_press:
       then:
-        - switch.toggle: relay_7
+        - switch.toggle: relay_10
 
   - platform: gpio
     name: "${node_name} IN_08"
@@ -123,7 +169,7 @@ binary_sensor:
       inverted: true
     on_press:
       then:
-        - switch.toggle: relay_8
+        - switch.toggle: relay_11
 
   - platform: gpio
     name: "${node_name} IN_09"
@@ -134,9 +180,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        - switch.toggle: relay_9
+#    on_press:
+#      then:
+#        - switch.toggle: relay_9
 
   - platform: gpio
     name: "${node_name} IN_10"
@@ -147,9 +193,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        - switch.toggle: relay_10
+#    on_press:
+#      then:
+#        - switch.toggle: relay_10
 
   - platform: gpio
     name: "${node_name} IN_11"
@@ -160,9 +206,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        - switch.toggle: relay_11
+#    on_press:
+#      then:
+#        - switch.toggle: relay_11
 
   - platform: gpio
     name: "${node_name} IN_12"
@@ -173,9 +219,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        - switch.toggle: relay_12
+#    on_press:
+#      then:
+#        - switch.toggle: relay_12
 
   - platform: gpio
     name: "${node_name} IN_13"
@@ -186,9 +232,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        - switch.toggle: relay_13
+#    on_press:
+#      then:
+#        - switch.toggle: relay_13
 
   - platform: gpio
     name: "${node_name} IN_14"
@@ -199,9 +245,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        - switch.toggle: relay_14
+#    on_press:
+#      then:
+#        - switch.toggle: relay_14
 
   - platform: gpio
     name: "${node_name} IN_15"
@@ -212,9 +258,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        - switch.toggle: relay_15
+#    on_press:
+#      then:
+#        - switch.toggle: relay_15
 
   - platform: gpio
     name: "${node_name} IN_16"
@@ -225,9 +271,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        - switch.toggle: relay_16
+#    on_press:
+#      then:
+#        - switch.toggle: relay_16
 
   - platform: gpio
     name: "${node_name} IN_17"
@@ -238,9 +284,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        - switch.toggle: relay_17
+#    on_press:
+#      then:
+#        - switch.toggle: relay_17
 
   - platform: gpio
     name: "${node_name} IN_18"
@@ -251,9 +297,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        - switch.toggle: relay_18
+#    on_press:
+#      then:
+#        - switch.toggle: relay_18
 
   - platform: gpio
     name: "${node_name} IN_19"
@@ -295,9 +341,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        - switch.toggle: relay_20
+#    on_press:
+#      then:
+#        - switch.toggle: relay_20
 
   - platform: gpio
     name: "${node_name} IN_21"
@@ -308,9 +354,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        - switch.toggle: relay_21
+#    on_press:
+#      then:
+#        - switch.toggle: relay_21
 
   - platform: gpio
     name: "${node_name} IN_22"
@@ -321,9 +367,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        - switch.toggle: relay_22
+#    on_press:
+#      then:
+#        - switch.toggle: relay_22
 
   - platform: gpio
     name: "${node_name} IN_23"
@@ -333,10 +379,10 @@ binary_sensor:
       number: 1
       mode:
         input: true
-      inverted: false
-    on_press:
-      then:
-        - switch.toggle: relay_23
+      inverted: true
+#    on_press:
+#      then:
+#        - switch.toggle: relay_23
 
   - platform: gpio
     name: "${node_name} IN_24"
@@ -347,9 +393,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        - switch.toggle: relay_24
+#    on_press:
+#      then:
+#        - switch.toggle: relay_24
 
   - platform: gpio
     name: "${node_name} IN_25"
@@ -359,10 +405,10 @@ binary_sensor:
       number: 8
       mode:
         input: true
-      inverted: false
-    on_press:
-      then:
-        - switch.toggle: relay_25
+      inverted: true
+#    on_press:
+#      then:
+#        - switch.toggle: relay_25
 
   - platform: gpio
     name: "${node_name} IN_26"
@@ -373,9 +419,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        - switch.toggle: relay_26
+#    on_press:
+#      then:
+#        - switch.toggle: relay_26
 
   - platform: gpio
     name: "${node_name} IN_27"
@@ -386,9 +432,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        - switch.toggle: relay_27
+#    on_press:
+#      then:
+#        - switch.toggle: relay_27
 
   - platform: gpio
     name: "${node_name} IN_28"
@@ -399,9 +445,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        - switch.toggle: relay_28
+#    on_press:
+#      then:
+#        - switch.toggle: relay_28
 
   - platform: gpio
     name: "${node_name} IN_29"
@@ -412,9 +458,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        - switch.toggle: relay_29
+#    on_press:
+#      then:
+#        - switch.toggle: relay_29
 
   - platform: gpio
     name: "${node_name} IN_30"
@@ -425,9 +471,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        - switch.toggle: relay_30
+#    on_press:
+#      then:
+#        - switch.toggle: relay_32
 
   - platform: gpio
     name: "${node_name} IN_31"
@@ -438,9 +484,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        - switch.toggle: relay_31
+#    on_press:
+#      then:
+#        - switch.toggle: relay_31
 
   - platform: gpio
     name: "${node_name} IN_32"
@@ -451,9 +497,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        - switch.toggle: relay_32
+#    on_press:
+#      then:
+#        - switch.toggle: relay_32
 
   - platform: gpio
     name: "${node_name} IN_33"
@@ -481,6 +527,6 @@ binary_sensor:
         input: true
         pullup: true
       inverted: false
-    on_press:
-      then:
-        - switch.toggle: relay_23
+#    on_press:
+#      then:
+#        - switch.toggle: relay_23

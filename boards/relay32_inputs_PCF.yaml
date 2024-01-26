@@ -517,7 +517,7 @@ binary_sensor:
       mode:
         input: true
         pullup: true
-      inverted: false
+      inverted: true
       
   - platform: gpio
     name: "${node_name} IN_35"
@@ -526,7 +526,7 @@ binary_sensor:
       mode:
         input: true
         pullup: true
-      inverted: false
+      inverted: true
 #    on_press:
 #      then:
 #        - switch.toggle: relay_23

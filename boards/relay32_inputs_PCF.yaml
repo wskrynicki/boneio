@@ -180,9 +180,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-#    on_press:
-#      then:
-#        - switch.toggle: relay_9
+    on_press:
+      then:
+        - switch.toggle: relay_12
 
   - platform: gpio
     name: "${node_name} IN_10"

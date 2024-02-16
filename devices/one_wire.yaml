@@ -3,16 +3,17 @@ dallas:
   update_interval: 10s
   
 sensor:
-- platform: dallas
-  address:  0xc33ce1e381796328
-  name: "Temp kuchnia"
-  
-- platform: dallas
-  address: 0x803ce1e381134028
-  name: "Temp garaż"
-#logger:
-#  level: VERBOSE
+#- platform: dallas
+#  address:  0xc33ce1e381796328
+#  name: "Temp kuchnia"
 
+  - platform: dallas
+    address: 0x126f6e7c1f64ff28
+    name: "GA_temp"
+
+  - platform: dallas
+    address: 0x9666617c1f64ff28
+    name: "PD_temp"
 # sensor:
 #   - platform: dallas
 #     address: 0x283c01d607d4df28

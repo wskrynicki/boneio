@@ -4,3 +4,39 @@ uart:
   tx_pin: GPIO1
   baud_rate: 9600
   stop_bits: 1
+
+modbus:
+  uart_id: mod_bus
+  id: modbus1
+  send_wait_time: 500ms
+
+modbus_controller:
+  - id: ch8_1st
+    address: 1   #1 i 2
+    modbus_id: modbus1
+    update_interval: 2s
+
+switch:
+  - platform: modbus_controller
+    name: 'ch8_1st_1'
+    address: 2  #relay1
+    register_type: coil
+    bitmask: 1
+    write_lambda: |-
+      ESP_LOGD("main","Modbus Switch incoming state = %f",x);
+      payload.push_back(0x01);  //device address
+      payload.push_back(0x01);  //control command
+      payload.push_back(0x00); //high byte address if coil
+      payload.push_back(0x0A);  //low byte address  of coil
+      payload.push_back(0x00); //ON
+      payload.push_back(0x0D);
+      payload.push_back(0xD0);   //CRC
+      payload.push_back(0x99);
+      return true;
+
+#  - platform: modbus_controller
+#    name: 'ch8_1st_2'
+#    address: 3  #relay1
+#    register_type: coil
+#    bitmask: 1
+#    custom_command: [0x1, 0x5, 0x00, 0x03, 0xFF, 0x00]

@@ -77,11 +77,11 @@ binary_sensor:
         - OFF for at least 0.2s
       then:
         - switch.toggle: relay_8 #TA
-    - timing:
-        - ON for 1s to 2s
-        - OFF for at least 0.5s
-      then:
-        - switch.toggle: relay_9 #TA
+#    - timing:
+#        - ON for 1s to 2s
+#        - OFF for at least 0.5s
+#      then:
+#        - switch.toggle: relay_9 #TA
     - timing:
         - ON for at most 1s
         - OFF for at least 0.5s
@@ -105,11 +105,11 @@ binary_sensor:
         - OFF for at least 0.2s
       then:
         - switch.toggle: relay_7 #TA
-    - timing:
-        - ON for 1s to 2s
-        - OFF for at least 0.5s
-      then:
-        - switch.toggle: relay_9 #TA
+#    - timing:
+#        - ON for 1s to 2s
+#        - OFF for at least 0.5s
+#      then:
+#        - switch.toggle: relay_9 #TA
     - timing:
         - ON for at most 1s
         - OFF for at least 0.5s
@@ -133,11 +133,11 @@ binary_sensor:
         - OFF for at least 0.2s
       then:
         - switch.toggle: relay_17 #TA
-    - timing:
-        - ON for 1s to 2s
-        - OFF for at least 0.5s
-      then:
-        - switch.toggle: relay_9 #TA
+#    - timing:
+#        - ON for 1s to 2s
+#        - OFF for at least 0.5s
+#      then:
+#        - switch.toggle: relay_9 #TA
     - timing:
         - ON for at most 1s
         - OFF for at least 0.5s
@@ -318,11 +318,11 @@ binary_sensor:
         - OFF for at least 0.2s
       then:
         - switch.toggle: relay_21 #PD
-    - timing:
-        - ON for 1s to 2s
-        - OFF for at least 0.5s
-      then:
-        - switch.toggle: relay_32 #HL
+#    - timing:
+#        - ON for 1s to 2s
+#        - OFF for at least 0.5s
+#      then:
+#        - switch.toggle: relay_32 #HL
     - timing:
         - ON for at most 1s
         - OFF for at least 0.5s

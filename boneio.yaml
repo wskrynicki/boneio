@@ -28,7 +28,7 @@ packages:
   internals: !include devices/boneio_board_PCF.yaml
   temp: !include devices/lm75b.yaml
   display: !include devices/display.yaml
-#  uart: !include devices/uart.yaml
+  uart: !include devices/uart.yaml
   one_wire: !include devices/one_wire.yaml
 
 logger:

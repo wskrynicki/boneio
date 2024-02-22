@@ -14,6 +14,10 @@ sensor:
   - platform: dallas
     address: 0x9666617c1f64ff28
     name: "PD_temp"
+
+  - platform: dallas
+    address: 0x9e21947d1f64ff28
+    name: "P3_temp"
 # sensor:
 #   - platform: dallas
 #     address: 0x283c01d607d4df28
@@ -26,3 +30,7 @@ sensor:
 #   - platform: dallas
 #     address: 0xa7a89f071e64ff28
 #     name: "Dallas Sensor 3"
+#[21:11:30][D][dallas.sensor:082]:   Found sensors:
+#[21:11:30][D][dallas.sensor:084]:     0x126f6e7c1f64ff28
+#[21:11:30][D][dallas.sensor:084]:     0x9666617c1f64ff28
+#[21:11:30][D][dallas.sensor:084]:     0x9e21947d1f64ff28

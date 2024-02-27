@@ -3,7 +3,7 @@ uart:
   rx_pin: GPIO3
   tx_pin: GPIO1
   baud_rate: 9600
-  stop_bits: 1
+  parity: NONE
   debug:
 
 modbus:
@@ -13,52 +13,59 @@ modbus:
 
 modbus_controller:
 - id: ch8_1st
-  address: 2
+  address: 0x3
   modbus_id: modbus1
-  update_interval: 2s
+  update_interval: 10s
+
+sensor:
+- platform: modbus_controller
+  modbus_controller_id: ch8_1st
+  name: 'read_vall'
+  custom_command: [0x3, 0x4, 0x00, 0x03, 0x03, 0x00]
 
 switch:
-- platform: uart
-  name: "uart1"
-  data: [0x02, 0x06, 0x00, 0x02, 0x03, 0x00, 0x28, 0xC9]
-
 - platform: modbus_controller
-  name: 'ch8_2st_1_holding'
-  address: 0x0002
-  register_type: holding
+  name: 'A_coil10+bezCRC'
+  register_type:    coil
+  address: 0x03
   bitmask: 1
-
-#switch:
+    
 - platform: modbus_controller
-  name: 'ch8_2st_2custom'
-  custom_command: [0x02, 0x06, 0x00, 0x02, 0x03, 0x00]
+  name: 'A_custom1+bezCRC'
+  custom_command: [0x3, 0x6, 0x00, 0x03, 0x03, 0x00]
 
-#switch:
 - platform: modbus_controller
-  name: 'ch8_1st_1_lambda'
-  address: 0x0002
-  register_type: holding
+  name: 'A_custom3+bezCRC'
+#  register_type: holding
+#  value_type:  U_WORD
+  custom_command: [0x3,0x6,0x00,0x3,0x3,0x00]
+
+- platform: modbus_controller
+  name: 'A_coil_addres2+bezCRC'
+  address: 3
+  register_type: coil
 #    bitmask: 1
   write_lambda: |-
-    ESP_LOGD("main","Modbus Switch incoming state = %f",x);
-    payload.push_back(0x2);  //device address
+    ESP_LOGD("main","Modbus Val_switch incoming state = %f",x);
+    payload.push_back(0x03);  //device address
     payload.push_back(0x06);  //control command
     payload.push_back(0x00); //high byte address if coil
-    payload.push_back(0x1);  //low byte address  of coil
-    payload.push_back(0x03); //ON
-    payload.push_back(0x0D);
-    return true;
-  
+    payload.push_back(0x06);  //low byte address  of coil
+    payload.push_back(0xFF); //ON
+    payload.push_back(0x00);
+    return x == 1;
+
 - platform: modbus_controller
-  name: 'ch8_1st_1_lambda2'
-  address: 0x0002
-  register_type: holding
+  name: 'A_coil_address3+bezCRC'
+  address: 3
+  register_type: coil
 #    bitmask: 1
   write_lambda: |-
-    payload.push_back(0x2);  //device address
+    ESP_LOGD("main","Modbus Val_switch incoming state = %f",x);
+    payload.push_back(0x03);  //device address
     payload.push_back(0x06);  //control command
     payload.push_back(0x00); //high byte address if coil
-    payload.push_back(0x1);  //low byte address  of coil
-    payload.push_back(0x03); //ON
-    payload.push_back(0x0D);
-    return true;
+    payload.push_back(0x06);  //low byte address  of coil
+    payload.push_back(0x00); //ON
+    payload.push_back(0x00);
+    return x == 1;

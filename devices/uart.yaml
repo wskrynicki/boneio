@@ -4,3 +4,19 @@ uart:
   tx_pin: GPIO1
   baud_rate: 9600
   stop_bits: 1
+
+modbus:
+  uart_id: mod_bus
+  id: modbus1
+  send_wait_time: 500ms
+
+modbus_controller:
+- id: ch8_1st
+  address: 0x3
+  modbus_id: modbus1
+  update_interval: 10s
+
+switch:
+- platform: modbus_controller
+  name: 'A_custom1+bezCRC'
+  custom_command: [0x3, 0x6, 0x00, 0x03, 0x03, 0x00]

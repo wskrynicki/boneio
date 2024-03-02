@@ -1,9 +1,10 @@
 uart:
   id: mod_bus
-  rx_pin: GPIO3
-  tx_pin: GPIO1
+  rx_pin: 3
+  tx_pin: 1
   baud_rate: 9600
   stop_bits: 1
+  parity: NONE
   debug:
 
 modbus:
@@ -13,30 +14,36 @@ modbus:
 
 modbus_controller:
 - id: ch8_1st
-  address: 0x3
+  address: 0x0003
   modbus_id: modbus1
   update_interval: 10s
 
 switch:
-- platform: modbus_controller
-  name: 'A_ON_3'
-  custom_command: [0x3, 0x6, 0x00, 0x03, 0x01, 0x00]
+#- platform: modbus_controller
+#  name: 'A_ON_3'
+#  custom_command: [0x3, 0x6, 0x00, 0x03, 0x01, 0x00]
   
 - platform: modbus_controller
-  name: 'A_OFF_3'
-  custom_command: [0x3, 0x6, 0x00, 0x03, 0x02, 0x00]
-
-- platform: modbus_controller
-  name: 'A_coil_addres4'
-  address: 4
+  name: 'wyj2'
+  address: 1
   register_type: coil
+  bitmask: 1
+  
+#- platform: modbus_controller
+#  name: 'A_OFF_3'
+#  custom_command: [0x3, 0x6, 0x00, 0x03, 0x02, 0x00]
+
+#- platform: modbus_controller
+#  name: 'A_coil_addres4'
+#  address: 4
+#  register_type: coil
 #    bitmask: 1
-  write_lambda: |-
-    ESP_LOGD("main","Modbus Val_switch incoming state = %f",x);
-    payload.push_back(0x03);  //device address
-    payload.push_back(0x06);  //control command
-    payload.push_back(0x00); //high byte address if coil
-    payload.push_back(0x04);  //low byte address  of coil
-    payload.push_back(0x01); //ON
-    payload.push_back(0x00);
-    return x == 1;
+#  write_lambda: |-
+#    ESP_LOGD("main","Modbus Val_switch incoming state = %f",x);
+#    payload.push_back(0x03);  //device address
+#    payload.push_back(0x06);  //control command
+#    payload.push_back(0x00); //high byte address if coil
+#    payload.push_back(0x04);  //low byte address  of coil
+#    payload.push_back(0x01); //ON
+#    payload.push_back(0x00);
+#    return x == 1;

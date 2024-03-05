@@ -18,6 +18,10 @@ sensor:
   - platform: dallas
     address: 0x9e21947d1f64ff28
     name: "P3_temp"
+        
+  - platform: dallas
+    address: 0x73c3df7d1f64ff28
+    name: "P2_temp"
 # sensor:
 #   - platform: dallas
 #     address: 0x283c01d607d4df28
@@ -34,3 +38,9 @@ sensor:
 #[21:11:30][D][dallas.sensor:084]:     0x126f6e7c1f64ff28
 #[21:11:30][D][dallas.sensor:084]:     0x9666617c1f64ff28
 #[21:11:30][D][dallas.sensor:084]:     0x9e21947d1f64ff28
+
+                                                          #0x126f6e7c1f64ff28
+#[11:09:39][D][dallas.sensor:084]:     0x9666617c1f64ff28
+#[11:09:39][D][dallas.sensor:084]:     0x9e21947d1f64ff28
+#[11:09:39][D][dallas.sensor:084]:     0x73c3df7d1f64ff28
+

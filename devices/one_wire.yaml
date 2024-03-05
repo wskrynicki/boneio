@@ -1,11 +1,14 @@
 dallas:
 - pin: GPIO32
 
-# sensor:
-#   - platform: dallas
-#     address: 0x283c01d607d4df28
-#     name: "Dallas Sensor 1"
-#
+sensor:
+  - platform: dallas
+    address: 0x459e81711f64ff28
+    name: "SA_cov_temp"
+
+#[20:45:08][D][dallas.sensor:082]:   Found sensors:
+#[20:45:08][D][dallas.sensor:084]:     0x459e81711f64ff28
+
 #   - platform: dallas
 #     address: 0xdfe67a061e64ff28
 #     name: "Dallas Sensor 2"

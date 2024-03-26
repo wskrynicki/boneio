@@ -119,7 +119,7 @@ binary_sensor:
       number: 8
       mode:
         input: true
-      inverted: true
+      inverted: false
    #   on_press:
    #     then:
    #       cover.open: cover_04
@@ -135,7 +135,7 @@ binary_sensor:
       number: 9
       mode:
         input: true
-      inverted: true
+      inverted: false
    #   on_press:
    #     then:
    #       cover.open: cover_05
@@ -488,9 +488,9 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-    on_press:
-      then:
-        cover.toggle: cover_09
+    #on_press:
+      #then:
+        #cover.toggle: cover_09
    #   on_release:
    #     then:
    #       cover.stop: cover_16

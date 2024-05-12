@@ -226,7 +226,7 @@ binary_sensor:
         - ON for at most 1s
         - OFF for at least 0.2s
       then:
-        - switch.toggle: relay_02
+        - switch.toggle: relay_2
 
   - platform: gpio
     name: "${node_name} IN_13"

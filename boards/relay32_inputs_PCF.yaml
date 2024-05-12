@@ -219,9 +219,14 @@ binary_sensor:
       mode:
         input: true
       inverted: true
-#    on_press:
-#      then:
-#        - switch.toggle: relay_12
+    on_multi_click:
+    - timing :
+        - ON for at most 1s
+        - OFF for at most 1s
+        - ON for at most 1s
+        - OFF for at least 0.2s
+      then:
+        - switch.toggle: relay_02
 
   - platform: gpio
     name: "${node_name} IN_13"

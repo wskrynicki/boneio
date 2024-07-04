@@ -343,7 +343,7 @@ binary_sensor:
       number: 8
       mode:
         input: true
-      inverted: true
+      inverted: false
    #   on_press:
    #     then:
    #       cover.open: cover_11

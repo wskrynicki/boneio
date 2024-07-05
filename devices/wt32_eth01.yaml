@@ -26,5 +26,10 @@ ethernet:
   phy_addr: 1
   power_pin: GPIO16
 
+  manual_ip:
+    static_ip: 192.168.0.81
+    gateway: 192.168.0.1
+    subnet: 255.255.255.0
+
   # uncomment this line and set your actual IP address before changing name of device
   # use_address: xxx.xxx.xxx.xxx

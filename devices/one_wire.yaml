@@ -1,8 +1,9 @@
-dallas:
-- pin: GPIO32
+one_wire:
+  - platform: gpio
+    pin: GPIO32
 
 sensor:
-  - platform: dallas
+  - platform: dallas_temp
     address: 0x459e81711f64ff28
     name: "SA_cov_temp"
 

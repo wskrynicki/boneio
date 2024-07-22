@@ -35,6 +35,7 @@ logger:
   baud_rate: 0
 api:
 ota:
+  platform: esphome
   password: boneio
 # disable web server - for testing only
 web_server:

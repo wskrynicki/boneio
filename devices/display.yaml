@@ -89,7 +89,7 @@ binary_sensor:
 display:
   - platform: ssd1306_i2c
     id: oled_display
-    model: "SH1106 128x64"
+    model: 'SH1106 128x64'
     address: 0x3C
     contrast: 0.5
     pages:
@@ -103,8 +103,6 @@ display:
           it.rectangle(0, 0, 126, 15);
           it.printf(64,11, id(danubeSmall), TextAlign::BASELINE_CENTER, "BoneIO");
           it.strftime(64, 25, id(dejaVuSmall), TextAlign::BASELINE_CENTER ,"%c", id(ds1307_time).now());
-          it.printf(4, 37, id(dejaVuSmall), TextAlign::BASELINE_LEFT ,"IP addr:");
-          it.printf(124, 37, id(dejaVuSmall), TextAlign::BASELINE_RIGHT ,"%s", id(eth).get_ip_address().str().c_str());
           it.printf(4, 49, id(dejaVuSmall), TextAlign::BASELINE_LEFT ,"Uptime:");
           it.printf(124, 49, id(dejaVuSmall), TextAlign::BASELINE_RIGHT ,"%s", id(wt32_uptime).state.c_str());
           it.printf(4, 61, id(dejaVuSmall), TextAlign::BASELINE_LEFT ,"Temperature:");
@@ -125,6 +123,7 @@ display:
       - id: screensaver
         lambda: |-
           it.fill(COLOR_OFF);
+
 
 font:
   - file: "${dir_name}/fonts/DejaVuSans.ttf"

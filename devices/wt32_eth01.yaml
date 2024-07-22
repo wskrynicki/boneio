@@ -22,3 +22,8 @@ ethernet:
 
   # uncomment this line and set your actual IP address before changing name of device
   # use_address: 172.21.130.57
+  manual_ip:
+    static_ip: 192.168.0.80
+    gateway: 192.168.0.1
+    subnet: 255.255.255.0
+

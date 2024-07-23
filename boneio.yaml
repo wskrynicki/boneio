@@ -7,22 +7,11 @@ substitutions:
 
 packages:
   # select your input board:
-  # input: !include boards/relay24_inputs_PCF.yaml
-  # input: !include boards/relay32_inputs_PCF.yaml
-  # input: !include boards/relay32_inputs_MCP.yaml
-  # input: !include boards/dimmer_led8x4_inputs.yaml
-  # input: !include boards/cover16_inputs_MCP.yaml
   input: !include boards/cover16_inputs_PCF.yaml
 
   # select your output board:
-  #output: !include boards/relay24_outputs_MCP.yaml
-  # output: !include boards/relay32_outputs_PCF.yaml
-  # output: !include boards/relay32_outputs_MCP.yaml
-  # output: !include boards/dimmer_led8x4_outputs.yaml
-  # light: !include boards/monochromatic_lights.yaml
   cover: !include boards/cover.yaml
   output: !include boards/cover16_outputs_PCF.yaml
-  # output: !include boards/cover16_outputs_MCP.yaml
   
   # select your devices:
   core: !include devices/wt32_eth01.yaml
